@@ -2,13 +2,12 @@ import "./App.css";
 import React, { useState } from "react";
 
 const styles = {
-  bold: { fontWeight: "bold" },
-  italic: { fontStyle: "italic" },
-  underline: { textDecorationLine: "underline" },
+  bold: { fontWeight: "bold", color: "black" },
+  italic: { fontStyle: "italic", color: "black" },
+  underline: { textDecorationLine: "underline", color: "black" },
 };
 
 const stylings = ["bold", "italic", "underline"];
-
 const colors = ["yellow", "blue", "red", "black", "purple"];
 
 const colorChange = (color) => {
@@ -16,6 +15,7 @@ const colorChange = (color) => {
 };
 function App() {
   const [changeValue, setChangeValue] = useState("");
+
   const stylingBoxes = stylings.map((style) => (
     <button
       className="btn btn-light"
@@ -31,7 +31,7 @@ function App() {
     <button
       style={{ backgroundColor: color, height: 30, width: 30 }}
       key={color}
-      onClick={() => setChangeValue((styles.color = { color: color }))}
+      onClick={() => setChangeValue((styles[changeValue] = { color }))}
     />
   ));
   console.log(styles);

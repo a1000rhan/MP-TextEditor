@@ -19,7 +19,7 @@ function App() {
   const stylingBoxes = stylings.map((style) => (
     <button
       className="btn btn-light"
-      style={styles[style]}
+      // style={styles[style]}
       key={style}
       onClick={() => setChangeValue(style)}
     >
